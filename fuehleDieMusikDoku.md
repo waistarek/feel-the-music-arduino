@@ -74,8 +74,8 @@ Dadurch konnten nun echte **MP3-Dateien** von einer microSD-Karte abgespielt wer
 
 #### Entwicklungsstufe 3: Erstes Gehäuse aus Pappe
 
-![Erstes Gehäuse mit LCD und Lautsprecheröffnung (Außenansicht)](./PappengehaeuseVonAußen.JPEG)
-![Innenaufbau mit Arduino, Breadboard und Lautsprecher (Innenansicht)](./PappengehaeuseVonInnen.JPEG)
+![Erstes Gehäuse mit LCD und Lautsprecheröffnung (Außenansicht)](./PappengehaeuseVonAußen.jpeg)
+![Innenaufbau mit Arduino, Breadboard und Lautsprecher (Innenansicht)](./PappengehaeuseVonInnen.jpeg)
 
 In dieser Stufe haben wir begonnen, die Elektronik in ein **provisorisches Gehäuse aus Pappe** einzubauen.  
 Das Ziel war, ein erstes Gefühl für die **Größe, Platzierung und Bedienbarkeit** des späteren Endprodukts zu bekommen.
@@ -129,7 +129,7 @@ Stattdessen nutzten wir ein **Pappgehäuse** als Ersatz, um:
 
 👉 Zur besseren Veranschaulichung wird hier ein **GIF der Gehäuseidee** ergänzt:
 
-![Gehäuse-Animation](./ModellFühle_Die_Musik.gif)
+![Gehäuse-Animation](./modell-fuehle-die-musik.gif)
 
 ---
 
