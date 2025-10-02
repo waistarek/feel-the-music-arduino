@@ -32,7 +32,7 @@ Um den Weg dorthin nachzuvollziehen, dokumentieren wir hier die wichtigsten Entw
 
 #### Entwicklungsstufe 1: Erster Testaufbau
 
-![Erster Testaufbau mit Arduino, Breadboard und Buzzer](./buzzer_Einsatz.JPEG)
+![Erster Testaufbau mit Arduino, Breadboard und Buzzer](./buzzer_Einsatz.jpeg)
 
 Auf diesem Foto ist der **erste Versuchsaufbau** zu sehen:
 - Ein **Arduino UNO** ist über USB mit dem Laptop verbunden.
