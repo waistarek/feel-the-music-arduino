@@ -67,7 +67,7 @@ Dadurch konnten nun echte **MP3-Dateien** von einer microSD-Karte abgespielt wer
 - Erste Erfahrungen mit der **Dateiverwaltung auf der SD-Karte** zu sammeln.  
 
 🎥 **Demo-Video:**  
-📹 [DFPlayer Mini – kurzes Demo-Video](./dfPlayerEinsatz.mp4)
+📹 <video src="./dfPlayerEinsatz.mp4" controls></video>
 
 > Mit diesem Schritt war der Grundstein für die **Musik-Komponente** gelegt.  
 
