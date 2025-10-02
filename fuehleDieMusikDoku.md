@@ -67,7 +67,7 @@ Dadurch konnten nun echte **MP3-Dateien** von einer microSD-Karte abgespielt wer
 - Erste Erfahrungen mit der **Dateiverwaltung auf der SD-Karte** zu sammeln.  
 
 🎥 **Demo-Video:**  
-📹 [Demo-Video ansehen](./dfPlayerEinsatz.mp4)
+📹 [Demo-Video ansehen](https://raw.githubusercontent.com/waistarek/feel-the-music-arduino/main/dfPlayerEinsatz.mp4)
 
 > Mit diesem Schritt war der Grundstein für die **Musik-Komponente** gelegt.  
 
