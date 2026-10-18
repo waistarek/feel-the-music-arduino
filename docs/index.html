@@ -1,3 +1,345 @@
-<!doctype html><meta charset="utf-8"><title>Demo-Video</title>
-<h1>Demo-Video</h1>
-<video src="dfPlayerEinsatz.mp4" controls style="max-width:100%"></video>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Feel the Music | Arduino Project Demo</title>
+
+  <meta name="description"
+        content="Feel the Music is an interactive Arduino prototype combining sound, LED lighting, and haptic feedback.">
+
+  <meta name="theme-color" content="#0b1020">
+
+  <style>
+    :root {
+      color-scheme: dark;
+      --background: #0b1020;
+      --surface: #151d30;
+      --text: #f1f5f9;
+      --muted: #a7b4c8;
+      --accent: #f59e81;
+      --border: #2a354a;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, "Segoe UI",
+                   Roboto, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(
+          ellipse at 85% 15%,
+          #32203a 0%,
+          transparent 45%
+        ),
+        var(--background);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 30px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .brand {
+      font-size: 1.2rem;
+      font-weight: 750;
+      letter-spacing: -0.5px;
+    }
+
+    .brand span {
+      color: var(--accent);
+    }
+
+    .github-link {
+      font-size: 0.9rem;
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+
+    .github-link:hover {
+      color: var(--text);
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 65px;
+      padding: 80px 0;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 7px 15px;
+      border: 1px solid #714b52;
+      border-radius: 100px;
+      color: #ffc0ad;
+      background: #f59e8110;
+      font-size: 0.8rem;
+      font-weight: 650;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 5vw, 4.5rem);
+      line-height: 1.1;
+      letter-spacing: -2px;
+      margin: 24px 0;
+    }
+
+    h1 span {
+      color: var(--accent);
+    }
+
+    .description {
+      color: var(--muted);
+      font-size: 1.08rem;
+      max-width: 500px;
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 28px 0 36px;
+    }
+
+    .feature {
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      padding: 8px 13px;
+      color: #cbd5e1;
+      background: var(--surface);
+      font-size: 0.86rem;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 22px;
+      border-radius: 10px;
+      background: var(--accent);
+      color: #211522;
+      font-weight: 700;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+
+    .button:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+
+    .video-card {
+      padding: 24px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      box-shadow: 0 25px 70px #00000040;
+    }
+
+    .video-heading {
+      margin: 0 0 18px;
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+
+    .video-frame {
+      display: flex;
+      justify-content: center;
+      overflow: hidden;
+      border-radius: 14px;
+      background: #05070d;
+    }
+
+    video {
+      display: block;
+      width: auto;
+      max-width: 100%;
+      max-height: 60vh;
+      background: #000;
+    }
+
+    .video-caption {
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 0.87rem;
+    }
+
+    .video-caption a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 26px 0 36px;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 800px) {
+      main {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 55px 0;
+      }
+
+      h1 {
+        letter-spacing: -1px;
+      }
+
+      .video-card {
+        padding: 16px;
+      }
+
+      video {
+        max-height: 65vh;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .button {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <header>
+      <a class="brand" href="./">
+        Feel <span>the Music</span>
+      </a>
+
+      <a
+        class="github-link"
+        href="https://github.com/waistarek/feel-the-music-arduino"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        View on GitHub ↗
+      </a>
+    </header>
+
+    <main>
+      <section aria-labelledby="project-title">
+
+        <span class="eyebrow">
+          Arduino · Interactive Hardware
+        </span>
+
+        <h1 id="project-title">
+          Feel the <span>Music.</span>
+        </h1>
+
+        <p class="description">
+          An interactive Arduino prototype that transforms
+          music into a multisensory experience through
+          synchronized sound, LED lighting, and haptic
+          feedback.
+        </p>
+
+        <p class="description">
+          Combining embedded C++, Python-based audio
+          analysis, and physical interaction design.
+        </p>
+
+        <div class="features">
+          <span class="feature">Arduino UNO R4 WiFi</span>
+          <span class="feature">NeoPixel LEDs</span>
+          <span class="feature">Haptic Feedback</span>
+          <span class="feature">Python</span>
+        </div>
+
+        <a
+          class="button"
+          href="https://github.com/waistarek/feel-the-music-arduino"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Explore the Project ↗
+        </a>
+
+      </section>
+
+      <section id="demo" class="video-card"
+               aria-labelledby="demo-title">
+
+        <h2 class="video-heading" id="demo-title">
+          Hardware Demo
+        </h2>
+
+        <div class="video-frame">
+          <video
+            controls
+            playsinline
+            preload="metadata"
+            aria-label="DFPlayer Mini hardware demonstration"
+          >
+            <source
+              src="./dfPlayerEinsatz.mp4"
+              type="video/mp4"
+            >
+
+            Your browser does not support HTML5 video.
+          </video>
+        </div>
+
+        <p class="video-caption">
+          DFPlayer Mini audio playback test during the
+          prototype development.
+          <a href="./dfPlayerEinsatz.mp4">
+            Open video directly
+          </a>
+        </p>
+
+      </section>
+    </main>
+
+    <footer>
+      Feel the Music · Interactive Hardware Prototype · 2025
+      <div>
+        Omar Assad Salem &amp; Tarek Wais
+        · Hochschule RheinMain
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>
