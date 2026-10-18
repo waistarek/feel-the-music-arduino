@@ -393,7 +393,7 @@ The project was developed in several stages:
 
 This iterative approach combined hardware experiments, embedded software, and physical prototyping.
 
-**Demo:** [DFPlayer demonstration video](docs/dfPlayerEinsatz.mp4)
+**Demo:** [DFPlayer demonstration video](https://waistarek.github.io/feel-the-music-arduino/)
 
 **Further documentation:** [Original German project report](fuehleDieMusikDoku.md)
 
