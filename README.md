@@ -14,7 +14,7 @@ The project combines embedded programming, sensor-based interaction, and offline
 **Team:** Omar Assad Salem and Tarek Wais  
 **Institution:** Hochschule RheinMain
 
-[View demo video](docs/dfPlayerEinsatz.mp4) · [Detailed project documentation (German)](fuehleDieMusikDoku.md)
+[Watch the demo video](https://waistarek.github.io/feel-the-music-arduino/) · [Detailed project documentation (German)](fuehleDieMusikDoku.md)
 
 ## Project Overview
 
